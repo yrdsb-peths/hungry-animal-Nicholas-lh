@@ -8,7 +8,6 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class MyWorld extends World
 {
-
     /**
      * Constructor for objects of class MyWorld.
      * 
@@ -19,9 +18,10 @@ public class MyWorld extends World
         super(600, 400, 1);
         
         Penguin penguin = new Penguin();
-        addObject(penguin, 300, 200);
+        addObject(penguin, 300, 400);
         
         
-        
+        Banana banana = new Banana();
+        addObject(banana, 200, 0);
     }
 }
