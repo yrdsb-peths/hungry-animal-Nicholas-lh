@@ -18,10 +18,16 @@ public class MyWorld extends World
         super(600, 400, 1);
         
         Penguin penguin = new Penguin();
-        addObject(penguin, 300, 400);
+        addObject(penguin, 300, 300);
         
-        
+        createBanana();
+    }
+    
+    public void createBanana()
+    {
         Banana banana = new Banana();
-        addObject(banana, 200, 0);
+        int x = Greenfoot.getRandomNumber(600);
+        int y = 0;
+        addObject(banana, 300, 0);
     }
 }

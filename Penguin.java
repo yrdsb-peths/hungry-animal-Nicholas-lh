@@ -14,6 +14,13 @@ public class Penguin extends Actor
      */
     public void act()
     {
-        move(3);
+        if(Greenfoot.isKeyDown("Left"))
+        {
+            move(-5);
+        }
+        if(Greenfoot.isKeyDown("Right"))
+        {
+            move(5);
+        }
     }
 }
