@@ -22,5 +22,19 @@ public class Penguin extends Actor
         {
             move(5);
         }
+        
+        eat();
+    }
+    
+    //eating the banana
+    public void eat()
+    {
+        if(isTouching(Banana.class))
+        {
+            removeTouching(Banana.class);
+            MyWorld world = (MyWorld) getWorld();
+            world.createBanana();
+            world.scoreIncrease();
+        }
     }
 }
