@@ -12,11 +12,11 @@ public class Banana extends Actor
      * Act - do whatever the Banana wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
-    
+    int speed = 3;
     public void act()
     {
         int x = getX();
-        int y = getY() + 3;
+        int y = getY() + speed;
         setLocation(x, y);
         
         MyWorld world = (MyWorld) getWorld();
@@ -25,5 +25,10 @@ public class Banana extends Actor
             world.gameOver();
             world.removeObject(this);
         }
+    }
+    
+    public void setSpeed(int spd)
+    {
+        speed = spd;
     }
 }
