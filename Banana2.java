@@ -6,13 +6,17 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class Banana extends Actor
+public class Banana2 extends Food
 {
     /**
      * Act - do whatever the Banana wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
     int speed = 3;
+    public Banana2()
+    {
+        super(1);
+    }
     public void act()
     {
         int x = getX();

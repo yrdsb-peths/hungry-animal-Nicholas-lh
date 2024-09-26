@@ -70,13 +70,20 @@ public class Penguin extends Actor
     //eating the banana
     public void eat()
     {
-        if(isTouching(Banana.class))
+        if(isTouching(Banana2.class))
         {
-            removeTouching(Banana.class);
+            removeTouching(Banana2.class);
             MyWorld world = (MyWorld) getWorld();
-            world.createBanana();
+            world.createFood();
             world.scoreIncrease();
             penguinSound.play();
+        }
+        if(isTouching(Plum.class))
+        {
+            removeTouching(Plum.class);
+            MyWorld world = (MyWorld) getWorld();
+            world.createFood();
+            world.scoreIncrease2();
         }
     }
 }

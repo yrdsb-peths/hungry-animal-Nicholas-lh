@@ -25,30 +25,41 @@ public class MyWorld extends World
         
         scoreLabel = new Label(0,80);
         addObject(scoreLabel, 30,40);
-        createBanana();
+        createFood();
     }
     
-    public void createBanana()
+    public void createFood()
     {
-        Banana banana = new Banana();
-        //this sets level to be the game
-        banana.setSpeed(level);
-        int x = Greenfoot.getRandomNumber(100);
-        int y = 0;
-        addObject(banana, 300, 0);
+        int rand = Greenfoot.getRandomNumber(2);
+        Food food;
+        if(rand == 0)
+        {
+            food = new Plum();
+        }
+        else
+        {
+            food = new Banana2();
+        }
+        int x = Greenfoot.getRandomNumber(600);
+        addObject(food, x, 0);
+        
     }
     
     public void scoreIncrease()
     {
       score++;
       scoreLabel.setValue(score);
-      
       if(score % 5 == 0)
       {
           level += 3;
       }
     }
-    
+    //second score
+    public void scoreIncrease2()
+    {
+      score += 3;
+      scoreLabel.setValue(score);
+    }
     //game over screen
     public void gameOver()
     {
