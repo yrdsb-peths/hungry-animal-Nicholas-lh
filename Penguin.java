@@ -8,10 +8,18 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Penguin extends Actor
 {
-    /**
-     * Act - do whatever the Penguin wants to do. This method is called whenever
-     * the 'Act' or 'Run' button gets pressed in the environment.
-     */
+    GreenfootSound penguinSound = new GreenfootSound("pinguin-220042.mp3");
+    //setting up 8 elements in the array
+    GreenfootImage[] idle = new GreenfootImage[8];
+    //Contructor 
+    public Penguin()
+    {
+        for(int i = 0; i < idle.length; i++)
+        {
+            idle[i] = new GreenfootImage("images/penguin_idle/idle" + i +".png");
+        }
+        setImage(idle[0]);
+    }
     public void act()
     {
         if(Greenfoot.isKeyDown("Left"))
@@ -35,6 +43,7 @@ public class Penguin extends Actor
             MyWorld world = (MyWorld) getWorld();
             world.createBanana();
             world.scoreIncrease();
+            penguinSound.play();
         }
     }
 }
